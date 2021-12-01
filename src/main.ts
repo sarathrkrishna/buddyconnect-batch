@@ -10,6 +10,9 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  await app.listen(3030);
+  // shut down hook for pre shutdown clean up
+  app.enableShutdownHooks();
+
+  await app.listen(process.env.PORT);
 }
 bootstrap();
