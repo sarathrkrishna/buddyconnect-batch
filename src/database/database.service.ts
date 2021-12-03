@@ -9,12 +9,12 @@ export class DatabaseService {
 
   async rawQuery(query: string, params: any[] = []): Promise<any[]> {
     // log query and params
-    this.logger.debug(`Executing query: ${query} <= ${params}`);
+    this.logger.log(`Executing query: ${query} <= ${params}`);
 
     const result = await this.pool.query(query, params);
 
     // log query output
-    this.logger.debug(`Executed Query, rows fetched: ${result.rows.length}`);
+    this.logger.log(`Executed Query, rows fetched: ${result.rows.length}`);
 
     return result.rows;
   }
