@@ -7,11 +7,11 @@ import { DatabaseService } from './database.service';
 
 const databasePoolFactory = async (configService: ConfigService) => {
   return new Pool({
-    user: configService.get('POSTGRES_USER'),
-    host: configService.get('POSTGRES_HOST'),
-    database: configService.get('POSTGRES_DB'),
-    password: configService.get('POSTGRES_PASSWORD'),
-    port: configService.get('POSTGRES_LOCAL_PORT'),
+    user: configService.get('db.user'),
+    host: configService.get('db.host'),
+    database: configService.get('db.database'),
+    password: configService.get('db.password'),
+    port: configService.get('db.port'),
   });
 };
 
