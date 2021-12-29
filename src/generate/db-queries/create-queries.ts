@@ -5,6 +5,7 @@ export const createClientMasterQuery = `
         password TEXT NOT NULL CONSTRAINT password_length_check CHECK (char_length(password) > 8),
         full_name TEXT NOT NULL,
         description TEXT,
+        display_picture_url TEXT,
         is_disabled BOOLEAN NOT NULL DEFAULT false,
         create_at TIMESTAMP NOT NULL DEFAULT NOW()
     )
