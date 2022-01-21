@@ -12,9 +12,9 @@ export const snakeToCamelcase = (text: string): string => {
 };
 
 export const snakeCaseObjectTocamelCase = <RetDto>(object: unknown): RetDto => {
-  let init: RetDto;
-  return Object.keys(object).reduce((final, key) => {
+  const final = {} as RetDto;
+  Object.keys(object).map((key) => {
     final[snakeToCamelcase(key)] = object[key];
-    return final;
-  }, init);
+  });
+  return final;
 };
