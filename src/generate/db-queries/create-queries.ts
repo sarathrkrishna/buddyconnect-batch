@@ -27,7 +27,8 @@ export const createChatMasterQuery = `
     CREATE TABLE IF NOT EXISTS chat_master (
         id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
         client_id uuid REFERENCES client_master(id) NOT NULL,
-        chat_id uuid REFERENCES client_master(id) NOT NULL
+        chat_id uuid REFERENCES client_master(id) NOT NULL,
+        is_deleted BOOLEAN DEFAULT false
     )
 `;
 
