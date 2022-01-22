@@ -18,7 +18,8 @@ export const createChatDataQuery = `
         group_display_picture_url TEXT,
         creator_id uuid REFERENCES client_master(id) NOT NULL,
         is_group BOOLEAN NOT NULL DEFAULT false,
-        create_at TIMESTAMP DEFAULT NOW()
+        create_at TIMESTAMP DEFAULT NOW(),
+        last_updated TIMESTAMP NOT NULL,
     )
 `;
 
